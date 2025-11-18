@@ -41,10 +41,6 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
-
-    m_drivetrain.setDefaultCommand(
-        new StickDrive(m_drivetrain, () -> -m_driverController.getRawAxis(1), () -> m_driverController.getRawAxis(2)));
-
   }
 
   /**
@@ -69,6 +65,12 @@ public class RobotContainer {
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is
     // pressed,
     // cancelling on release.
+
+    // sets the default command for the drivetrain with tank drive
+    m_drivetrain.setDefaultCommand(
+        new StickDrive(m_drivetrain, () -> -m_driverController.getRawAxis(1), () -> m_driverController.getRawAxis(2)));
+
+    // oriyents robot towards the april tag when the circle is down
 
   }
 
